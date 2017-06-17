@@ -39,7 +39,7 @@ You don't want to use a big value in MAX_DEPTH because it will cause chain react
 `MAX_DEPTH` - This is the maximum depth for looking for `package.json` and `bower.json` (default: 1).
 
 ## docker-compose.yml example
-```
+```yaml
 version: '3'
 
 services:
