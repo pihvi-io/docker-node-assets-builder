@@ -28,7 +28,7 @@ Here's an example theme folder structure which can be buided with this project:
 
 In this example we would use following envs: `MAX_DEPTH=3` and `BUILD_DIR=/build/themes`.
 
-You don't want to use a big value in MAX_DEPTH because it will cause chain reaction which installs the dependencies from `node_modules` again and again.
+You don't want to use a big value in `MAX_DEPTH` because it will cause chain reaction which installs the dependencies from `node_modules` again and again.
 
 ## Configuration through envs
 
