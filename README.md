@@ -1,5 +1,5 @@
 # Node assets builder
-This is docker container for building frontend web assets with grunt, gulp or webpack (More tools will be added when they became popular).
+This is docker container for building frontend web assets recursively from multiple subfolders with grunt, gulp or webpack. (More tools will be added when they became popular).
 
 This container is designed for CMS projects like Drupal or WordPress which can have multiple different themes in one project.
 
@@ -36,7 +36,7 @@ You don't want to use a big value in MAX_DEPTH because it will cause chain react
 
 `NODE_VERSION` - The container contains [nvm](https://github.com/creationix/nvm) for using a custom nodejs version. If you define this the container automatically uses custom nodejs version for everything.
 
-`MAX_DEPTH` - This is the maximum depth for looking for `package.json` and `bower.json`.
+`MAX_DEPTH` - This is the maximum depth for looking for `package.json` and `bower.json` (default: 1).
 
 ## docker-compose.yml example
 ```
