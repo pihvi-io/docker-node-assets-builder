@@ -16,7 +16,7 @@ $ docker pull pihvio/node-assets-builder
 
 ## Example theme setup
 
-Here's an example theme folder structure which can be buided with this project:
+Here's an example theme folder structure which can be builded with this project:
 ```
 /build/themes
 ├── theme1
@@ -31,9 +31,12 @@ Here's an example theme folder structure which can be buided with this project:
     └── package.json
 ```
 
-In this example we would use following envs: `MAX_DEPTH=3` and `BUILD_DIR=/build/themes`.
+In this example we would use following envs: `MAX_DEPTH=3` and `BUILD_DIR=/build/themes`:
+```
+$ docker run -v ./themes:/build/themes -e MAX_DEPTH=3 -e BUILD_DIR=/build/themes pihvio/node-assets-builder
+```
 
-You don't want to use a big value in `MAX_DEPTH` because it will cause chain reaction which installs the dependencies from `node_modules` again and again.
+You don't want to use too big value in `MAX_DEPTH` because it will cause chain reaction which installs the dependencies from `node_modules` again and again.
 
 ## Configuration through envs
 
