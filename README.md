@@ -10,7 +10,7 @@ $ docker pull pihvio/node-assets-builder
 
 ## How it works
 1. It searches directories with `package.json` and `bower.json`
-2. It installs packages from those files with yarn or bower
+2. It installs packages from those folders with `yarn` and `bower`
 3. It searches `Gruntfile.js`,`gulpfile.js` and `webpack.js` from those same directories
 4. It builds all of the founded files with default configurations
 
@@ -32,11 +32,12 @@ Here's an example theme folder structure which can be builded with this project:
 ```
 
 In this example we would use following envs: `MAX_DEPTH=3` and `BUILD_DIR=/build/themes`:
+
 ```
 $ docker run -v ./themes:/build/themes -e MAX_DEPTH=3 -e BUILD_DIR=/build/themes pihvio/node-assets-builder
 ```
 
-You don't want to use too big value in `MAX_DEPTH` because it will cause chain reaction which installs the dependencies from `node_modules` again and again.
+This would build all 'default' tasks from the provided themes.
 
 ## Configuration through envs
 
@@ -44,7 +45,7 @@ You don't want to use too big value in `MAX_DEPTH` because it will cause chain r
 
 `NODE_VERSION` - The container contains [nvm](https://github.com/creationix/nvm) for using a custom nodejs version. If you define this the container automatically uses custom nodejs version for everything.
 
-`MAX_DEPTH` - This is the maximum depth for looking for `package.json` and `bower.json` (default: 1).
+`MAX_DEPTH` - This is the maximum depth for looking for `package.json` and `bower.json` (default: 1). You don't want to use too big value in `MAX_DEPTH` because it will cause chain reaction which installs the dependencies of dependencies again and again.
 
 ## docker-compose.yml example
 ```yaml
