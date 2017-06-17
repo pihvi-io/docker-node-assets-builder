@@ -3,6 +3,11 @@ This is docker container for building frontend web assets recursively from multi
 
 This container is designed for CMS projects like Drupal or WordPress which can have multiple different themes in one project.
 
+You can download the image by running:
+```bash
+$ docker pull pihvio/node-assets-builder
+```
+
 ## How it works
 1. It searches directories with `package.json` and `bower.json`
 2. It installs packages from those files with yarn or bower
@@ -44,7 +49,7 @@ version: '3'
 
 services:
   assets:
-    build: .
+    image: pihvi/node-assets-builder
     environment:
       MAX_DEPTH: 3
       NODE_VERSION: v8.1.2
